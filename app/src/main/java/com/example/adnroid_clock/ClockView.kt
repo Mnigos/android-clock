@@ -18,20 +18,20 @@ class ClockView(c: Context, attrs: AttributeSet?) : View(c, attrs) {
         paint.isAntiAlias = true
     }
 
-    private fun getImage(num: String): Int {
+    private fun getImage(num: Char): Int {
         var image = 0
 
         when (num) {
-            "0" -> image = R.drawable.zero
-            "1" -> image = R.drawable.one
-            "2" -> image = R.drawable.two
-            "3" -> image = R.drawable.three
-            "4" -> image = R.drawable.four
-            "5" -> image = R.drawable.five
-            "6" -> image = R.drawable.six
-            "7" -> image = R.drawable.seven
-            "8" -> image = R.drawable.eight
-            "9" -> image = R.drawable.nine
+            '0' -> image = R.drawable.zero
+            '1' -> image = R.drawable.one
+            '2' -> image = R.drawable.two
+            '3' -> image = R.drawable.three
+            '4' -> image = R.drawable.four
+            '5' -> image = R.drawable.five
+            '6' -> image = R.drawable.six
+            '7' -> image = R.drawable.seven
+            '8' -> image = R.drawable.eight
+            '9' -> image = R.drawable.nine
         }
 
         return image
