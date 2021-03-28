@@ -24,10 +24,10 @@ class ClockView(c: Context, attrs: AttributeSet?, defStyleAttr: Int) : View(c, a
         val minute: String = calendar.get(Calendar.MINUTE).toString()
         val second: String = calendar.get(Calendar.SECOND).toString()
 
-        canvas?.drawColor(Color.WHITE)
-        canvas?.drawText(hour, width / 2F - 200F, height / 2F, paint)
-        canvas?.drawText(minute, width / 2F - 100F, height / 2F, paint)
-        canvas?.drawText(second, width / 2F, height / 2F, paint)
+//        canvas?.drawColor(Color.WHITE)
+//        canvas?.drawText(hour, width / 2F - 200F, height / 2F, paint)
+//        canvas?.drawText(minute, width / 2F - 100F, height / 2F, paint)
+//        canvas?.drawText(second, width / 2F, height / 2F, paint)
 
         postInvalidateDelayed(500)
         invalidate()
