@@ -18,6 +18,14 @@ class ClockView(c: Context, attrs: AttributeSet?) : View(c, attrs) {
         paint.isAntiAlias = true
     }
 
+    private fun getImage(num: String) {
+        for (char in num) {
+            when(char) {
+                '0'
+            }
+        }
+    }
+
     override fun onDraw(canvas: Canvas?) {
         val calendar = Calendar.getInstance()
         val hour: String = calendar.get(Calendar.HOUR_OF_DAY).toString()
