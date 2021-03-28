@@ -19,7 +19,7 @@ class ClockView(c: Context, attrs: AttributeSet?) : View(c, attrs) {
     }
 
     private fun getImage(num: String): Int {
-        var image: Int = 0
+        var image = 0
 
         for (char in num) {
             when(char) {
