@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import java.util.*
-import kotlin.concurrent.timerTask
 
 class MainActivity : AppCompatActivity() {
     private var hours = 0
@@ -86,7 +85,7 @@ class MainActivity : AppCompatActivity() {
         imageSecond = findViewById(R.id.imageSecond)
         imageThird = findViewById(R.id.imageThird)
         imageFourth = findViewById(R.id.imageFourth)
-        imageFifth = findViewById(R.id.imageFifth)
+        imageFifth = findViewById(R.id.imageFourth)
         imageSixth = findViewById(R.id.imageSixth)
 
         Timer().scheduleAtFixedRate(object : TimerTask() {
