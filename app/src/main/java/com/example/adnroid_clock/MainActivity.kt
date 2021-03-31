@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import java.util.*
+import kotlin.concurrent.timerTask
 
 class MainActivity : AppCompatActivity() {
     private var hours = 0
@@ -77,12 +78,6 @@ class MainActivity : AppCompatActivity() {
         imageSixth.setImageResource(getImage(sixthNum))
     }
 
-//    val calendar = Calendar.getInstance()
-//
-//    val hours = calendar.get(Calendar.HOUR_OF_DAY)
-//    val minutes = calendar.get(Calendar.MINUTE)
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -93,5 +88,14 @@ class MainActivity : AppCompatActivity() {
         imageFourth = findViewById(R.id.imageFourth)
         imageFifth = findViewById(R.id.imageFifth)
         imageSixth = findViewById(R.id.imageSixth)
+
+        Timer().scheduleAtFixedRate(object : TimerTask() {
+            override fun run() {
+                updateTime()
+                updateDigits()
+
+                runOnUiThread { setImages() }
+            }
+        }, 0, 1000)
     }
 }
