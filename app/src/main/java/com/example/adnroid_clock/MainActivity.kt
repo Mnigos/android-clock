@@ -10,6 +10,11 @@ class MainActivity : AppCompatActivity() {
         else 0
     }
 
+    private fun getSecondDigit(num: Int): Int {
+        return if (num > 9) num.toString().substring(1..2).toInt()
+        else num
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
