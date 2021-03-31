@@ -24,18 +24,17 @@ class MainActivity : AppCompatActivity() {
     private lateinit var imageFifth: ImageView
     private lateinit var imageSixth: ImageView
 
-
     private fun getFirstDigit(num: Int): Int {
-        return if (num > 9) num.toString().substring(0..1).toInt()
+        return if (num > 9) num.toString()[0].toString().toInt()
         else 0
     }
 
     private fun getSecondDigit(num: Int): Int {
-        return if (num > 9) num.toString().substring(1..2).toInt()
+        return if (num > 9) num.toString()[1].toString().toInt()
         else num
     }
 
-    private fun getImage(num: Int): Int = when(num) {
+    private fun getImage(num: Int): Int = when (num) {
         0 -> R.drawable.zero
         1 -> R.drawable.one
         2 -> R.drawable.two
@@ -61,7 +60,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun updateTime() {
-        val calendar = Calendar.getInstance()
+        val calendar = Calendar.getInstance(TimeZone.getTimeZone("UTC+3"))
 
         hours = calendar[Calendar.HOUR_OF_DAY]
         minutes = calendar[Calendar.MINUTE]
@@ -85,16 +84,19 @@ class MainActivity : AppCompatActivity() {
         imageSecond = findViewById(R.id.imageSecond)
         imageThird = findViewById(R.id.imageThird)
         imageFourth = findViewById(R.id.imageFourth)
-        imageFifth = findViewById(R.id.imageFourth)
+        imageFifth = findViewById(R.id.imageFifth)
         imageSixth = findViewById(R.id.imageSixth)
 
-        Timer().scheduleAtFixedRate(object : TimerTask() {
-            override fun run() {
-                updateTime()
-                updateDigits()
+        Timer().scheduleAtFixedRate(
+            object : TimerTask() {
+                override fun run() {
+                    updateTime()
+                    updateDigits()
 
-                runOnUiThread { setImages() }
-            }
-        }, 0, 1000)
+                    runOnUiThread { setImages() }
+                }
+            },
+            0, 1000
+        )
     }
 }
