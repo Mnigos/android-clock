@@ -35,17 +35,17 @@ class MainActivity : AppCompatActivity() {
         else num
     }
 
-    private fun getImage(num: Char): Int = when(num) {
-        '0' -> R.drawable.zero
-        '1' -> R.drawable.one
-        '2' -> R.drawable.two
-        '3' -> R.drawable.three
-        '4' -> R.drawable.four
-        '5' -> R.drawable.five
-        '6' -> R.drawable.six
-        '7' -> R.drawable.seven
-        '8' -> R.drawable.eight
-        '9' -> R.drawable.nine
+    private fun getImage(num: Int): Int = when(num) {
+        0 -> R.drawable.zero
+        1 -> R.drawable.one
+        2 -> R.drawable.two
+        3 -> R.drawable.three
+        4 -> R.drawable.four
+        5 -> R.drawable.five
+        6 -> R.drawable.six
+        7 -> R.drawable.seven
+        8 -> R.drawable.eight
+        9 -> R.drawable.nine
         else -> 0
     }
 
@@ -69,7 +69,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setImages() {
-        imageFirst
+        imageFirst.setImageResource(getImage(firstNum))
+        imageSecond.setImageResource(getImage(secondNum))
+        imageThird.setImageResource(getImage(thirdNum))
+        imageFourth.setImageResource(getImage(fourthNum))
+        imageFifth.setImageResource(getImage(fifthNum))
+        imageSixth.setImageResource(getImage(sixthNum))
     }
 
 //    val calendar = Calendar.getInstance()
